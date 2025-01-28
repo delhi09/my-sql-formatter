@@ -43,12 +43,16 @@
 
             formatButton.addEventListener("click", async () => {
                 const inputSQL = document.getElementById("input-sql").value;
+
                 try {
+                    // SQLをJSON形式で安全にPythonに渡す
                     const formattedSQL = await pyodide.runPythonAsync(`
                         import sqlparse
-                        sql = '''${inputSQL}'''
+                        import json
+                        sql = json.loads(${JSON.stringify(JSON.stringify(inputSQL))})
                         sqlparse.format(sql, reindent=True, keyword_case='upper')
                     `);
+
                     document.getElementById("output-sql").value = formattedSQL;
                 } catch (error) {
                     document.getElementById("output-sql").value = "Error formatting SQL: " + error;
