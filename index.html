@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SQL Formatter</title>
+    <title>SQL整形ツール</title>
     <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
     <style>
         body {
@@ -23,11 +23,11 @@
     </style>
 </head>
 <body>
-    <h1>SQL Formatter</h1>
-    <p>Paste your SQL below and click "Format" to beautify it.</p>
+    <h1>SQL整形ツール</h1>
+    <p>ここにSQLを貼って「整形」を押してください</p>
     <textarea id="input-sql" placeholder="Enter your SQL here..."></textarea>
-    <button id="format-btn">Format</button>
-    <h2>Formatted SQL</h2>
+    <button id="format-btn">整形</button>
+    <h2>結果</h2>
     <textarea id="output-sql" readonly></textarea>
 
     <script>
